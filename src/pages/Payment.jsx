@@ -509,29 +509,29 @@ export default function Payment() {
                       )}
                     </button>
                   )} */}
-                  {user?.paymentStatus !== 'pending_approval' && (
-                  <button
-                    type="button"
-                    onClick={handleMockPayment}
-                    disabled={mockLoading}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:from-gray-300 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 disabled:scale-100 shadow-lg flex items-center justify-center gap-2"
-                  >
-                    {mockLoading ? (
-                      <>
-                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                        </svg>
-                        Đang gửi yêu cầu...
-                      </>
-                    ) : (
-                      <>
-                        <CheckCircle size={20} />
-                        Tôi đã chuyển khoản xong
-                      </>
-                    )}
-                  </button>
-                )}
+                    {user?.paymentStatus !== 'pending_approval' && (
+                    <button
+                      type="button"
+                      onClick={handleSubmitPayment}
+                      disabled={mockLoading}
+                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:from-gray-300 disabled:to-gray-400 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 disabled:scale-100 shadow-lg flex items-center justify-center gap-2"
+                    >
+                      {mockLoading ? (
+                        <>
+                          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          </svg>
+                          Đang gửi yêu cầu...
+                        </>
+                      ) : (
+                        <>
+                          <CheckCircle size={20} />
+                          Tôi đã chuyển khoản xong
+                        </>
+                      )}
+                    </button>
+                  )}
 
                   <p className="text-center text-xs text-slate-500 flex items-center justify-center gap-1">
                     <Lock size={12} />
@@ -633,3 +633,4 @@ export default function Payment() {
     </div>
   );
 }
+
